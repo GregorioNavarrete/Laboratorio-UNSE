@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>//para usar la operacion potencia 
 
 void LasPonetenciasDeN(int num);            /* declaración */
 
@@ -20,10 +19,18 @@ int main() {
 
 void LasPonetenciasDeN(int num) { /* definición de la función */
 	int aux=2;
-	for(int i=1;i<=num;i++){	
-		aux=pow(aux,i);
-
+	for(int i=0;i<num;i++){
+	
+		for(int j=0;j<i;j++){
+			aux=2*aux;
+		}
 		printf(" %d-",aux);
-		aux=2;
+		aux=2;	
+	}
+	if(num==0){
+		printf(" 1-");
+	}
+	if(num<0){
+		printf("\n El numero debe ser positivo ");
 	}
 }
